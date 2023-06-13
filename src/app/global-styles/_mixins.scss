@@ -42,3 +42,16 @@
 		@content;
 	}
 }
+
+@mixin font-color($color) {
+	color: $color;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+}
+
+@mixin font-weight($weight) {
+	font-weight: $weight;
+}
+
