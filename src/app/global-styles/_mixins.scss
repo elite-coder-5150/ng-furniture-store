@@ -1,0 +1,44 @@
+@import "vars";
+
+@function px-to-rem($value) {
+	$result: calc($value / 16) * 1rem;
+	@return $result;
+}
+// q: what does the above function do?
+// a: it converts px to rem
+
+@mixin mobile {
+	@media (max-width: $phone-size) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: $tablet-size) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop-size) {
+		@content;
+	}
+}
+
+@mixin lg-desktop {
+	@media (min-width: $lg-desktop) {
+		@content;
+	}
+}
+
+@mixin xl-desktop {
+	@media (min-width: $xl-desktop) {
+		@content;
+	}
+}
+
+@mixin uhd-desktop {
+	@media (min-width: $uhd-desktop) {
+		@content;
+	}
+}
