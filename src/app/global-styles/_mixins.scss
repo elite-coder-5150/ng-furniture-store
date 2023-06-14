@@ -4,6 +4,7 @@
 	$result: calc($value / 16) * 1rem;
 	@return $result;
 }
+
 // q: what does the above function do?
 // a: it converts px to rem
 
@@ -48,10 +49,40 @@
 }
 
 @mixin font-size($size) {
-	font-size: $size;
+	font-size: px-to-rem($size);
+}
+
+@mixin line-height($height) {
+	line-height: px-to-rem($height);
+}
+
+@mixin flex() {
+	display: flex;
+}
+
+@mixin reset-link() {
+	text-decoration: none;
+	color: inherit;
+}
+
+@mixin unstyled-list() {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin pull-right() {
+	margin-left: auto;
+}
+
+@mixin pull-left() {
+	margin-right: auto;
 }
 
 @mixin font-weight($weight) {
 	font-weight: $weight;
 }
 
+@mixin set-font($font) {
+	font-family: $font;
+}
