@@ -1,0 +1,40 @@
+<div class="order-summary-card">
+	<header class="card-header">
+		<h2 class="card-title">Order Summary</h2>
+	</header>
+	<ul class="item-list">
+		<li *ngFor="let cartItem of cartItems"
+		    class="cart-item">
+			<div class="left">
+				<div class="name">{{ cartItem.name }}</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ cartItem.price }}</div>
+			</div>
+		</li>
+	</ul>
+	<ul class="sub-total">
+		<li class="cart-item">
+			<div class="left">
+				<div class="text">sub total</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ cartItem.subtotal }}</div>
+			</div>
+		</li>
+	</ul>
+
+	<ul class="total">
+		<li class="cart-item">
+			<div class="left">
+				<div class="text">total</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ cartItem.total }}</div>
+			</div>
+		</li>
+	</ul>
+	<ng-primary-btn>place order</ng-primary-btn>
+</div>
+
+<!-- this is what ai generated for me -->

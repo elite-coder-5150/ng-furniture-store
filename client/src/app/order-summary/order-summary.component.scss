@@ -1,0 +1,77 @@
+@import "../global-styles/mixins";
+@import "../global-styles/vars";
+.order-summary-card {
+	background: $clr-order-summary-bg;
+	padding: 24px 38px;
+	max-width: 417px;
+	margin: 50px 0 0 50px;
+	border: 1px solid darken($clr-order-summary-bg, 10%);
+	.card-header {
+		.card-title {
+			@include set-font($heading-font);
+			@include font-color($clr-heading-text);
+			@include font-size(20);
+			@include line-height(25);
+			text-transform: capitalize;
+		}
+	}
+
+	.items-list,
+	.sub-total,
+	.total {
+		@include flex();
+		@include unstyled-list();
+
+		flex-direction: column;
+		.cart-item {
+			@include flex();
+
+			flex-direction: row;
+			text-transform: capitalize;
+			margin-bottom: 25px;
+
+			.left {
+				.name {
+					@include set-font($base-font-family);
+					@include font-color($clr-heading-text);
+					@include font-size(16);
+					@include line-height(20);
+				}
+			}
+			.right {
+				@include pull-right();
+				.price {
+					@include set-font($base-font-family);
+					@include font-color($clr-heading-text);
+					@include font-size(16);
+					@include line-height(20);
+				}
+			}
+		}
+	}
+
+	.items-list,
+	.sub-total {
+		border-bottom: 1px solid $clr-dark-border-bottom;
+		margin-bottom: 25px;
+	}
+
+	.discount-price {
+		@include set-font($base-font-family);
+		@include font-color($clr-discount-text);
+		@include font-size(16);
+		@include line-height(20);
+	}
+
+	button {
+		border: none;
+		&.primary-full-width {
+			width: 100%;
+			height: 56px;
+			background: $clr-primary;
+			border-radius: px-to-rem(8);
+
+			@include font-color($clr-light-text)
+		}
+	}
+}

@@ -1,0 +1,54 @@
+<div class="order-summary-card">
+	<header class="card-header">
+		<h2 class="card-title">Order Summary</h2>
+	</header>
+	<ul class="item-list">
+		<li *ngFor="let cartItem of cartItems" class="cart-item">
+			<div class="left">
+				<div class="name">{{ cartItem.name }}</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ cartItem.price | currency }}</div>
+				<div class="quantity">{{ cartItem.quantity }}</div>
+				<div class="subtotal">{{ (cartItem.price * cartItem.quantity) | currency }}</div>
+			</div>
+		</li>
+	</ul>
+	<ul class="sub-total">
+		<li class="cart-item">
+			<div class="left">
+				<div class="text">Subtotal</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ calculateSubtotal() | currency }}</div>
+			</div>
+		</li>
+		<li class="cart-item">
+			<div class="left">
+				<div class="text">Tax</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ calculateTax() | currency }}</div>
+			</div>
+		</li>
+		<li class="cart-item">
+			<div class="left">
+				<div class="text">Shipping</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ calculateShipping() | currency }}</div>
+			</div>
+		</li>
+	</ul>
+	<ul class="total">
+		<li class="cart-item">
+			<div class="left">
+				<div class="text">Total</div>
+			</div>
+			<div class="right">
+				<div class="price">{{ calculateTotal() | currency }}</div>
+			</div>
+		</li>
+	</ul>
+	<button class="primary-btn" (click)="placeOrder()">Place Order</button>
+</div>
